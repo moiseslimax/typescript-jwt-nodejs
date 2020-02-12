@@ -10,7 +10,6 @@ export const signUp = async (req: Request,res: Response) => {
         password: req.body.password
     });
 
-
     user.password = await user.encryptPassword(user.password);
     const savedUser = await user.save();
 
